@@ -73,9 +73,6 @@ class HorizontalCrossFlowLayout: UICollectionViewFlowLayout {
     override func prepare() {
         super.prepare()
         scrollDirection = .horizontal
-        minimumLineSpacing = 0
-        minimumInteritemSpacing = 0
-        sectionInset = UIEdgeInsets.zero
     }
     
     
