@@ -51,6 +51,18 @@ class HorizontalCrossFlowLayout: UICollectionViewFlowLayout {
         return arr
     }()
     
+    /// 计算ContentSize
+    override var collectionViewContentSize: CGSize{
+        get{
+            var count = 0
+            for index in 0..<(self.collectionView?.numberOfSections ?? 0){
+                count += collectionView?.numberOfItems(inSection: index) ?? 0
+            }
+            let page = count / (kNumbersPerLine * kNumbersPerCol)
+            return CGSize(width: self.collectionView!.frame.width * CGFloat(page), height: 0)
+        }
+    }
+    
     
     /// 唯一初始化方法
     ///
